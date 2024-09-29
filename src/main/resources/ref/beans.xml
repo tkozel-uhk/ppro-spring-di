@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="dateFormatBean" class="java.text.SimpleDateFormat">
+        <constructor-arg value="dd. MMMMM yyyy"/>
+    </bean>
+
+    <bean id="timeFormatBean" class="java.text.SimpleDateFormat" >
+        <constructor-arg value="HH:mm:ss"/>
+    </bean>
+
+    <bean id="timeSrv" class="ref.TimeServiceImpl">
+        <property name="dateFormat" ref="dateFormatBean"/>
+        <property name="timeFormat" ref="timeFormatBean"/>
+    </bean>
+	
+    <bean id="helloBean" class="ref.TimeConsumer">
+        <property name="timeService" ref="timeSrv"/>
+    </bean>
+</beans>

@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 /**
@@ -21,6 +22,7 @@ public class TimeServiceAnotImpl implements TimeService {
 	}
 
 	@Autowired
+	@Qualifier("dateFormat")
 	public void setDateFormat(DateFormat dateFormat) {
 		this.dateFormat = dateFormat;
 	}
@@ -30,6 +32,7 @@ public class TimeServiceAnotImpl implements TimeService {
 	}
 
 	@Autowired
+	@Qualifier("timeFormat")
 	public void setTimeFormat(DateFormat timeFormat) {
 		this.xxx = timeFormat;
 	}

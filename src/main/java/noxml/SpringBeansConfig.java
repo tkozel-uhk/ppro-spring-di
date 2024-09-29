@@ -63,9 +63,9 @@ public class SpringBeansConfig {
 //		return new TimeConsumerAnot();
 //	}
 //	
-//	@Bean
-//	TimeService timeService() {
-//		return new TimeServiceAnotImpl();
-//	}
+	@Bean
+	TimeService timeService() {
+		return new TimeServiceAnotImpl();
+	}
 	
 }
